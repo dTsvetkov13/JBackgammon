@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface IArrayList
+public interface IList
 {
 
 }
