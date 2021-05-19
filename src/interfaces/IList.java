@@ -1,9 +1,9 @@
 package interfaces;
 
-public interface IList<T>
+public interface IList<T> extends Iterable<T>
 {
 	boolean isEmpty(); 
-	boolean contains(T item); 
+	boolean contains(T item);
 	void add(T item);
 	void insertAt(T item, int index); 
 	void removeFrom(int index);
