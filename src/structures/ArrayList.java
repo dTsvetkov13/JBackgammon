@@ -1,5 +1,7 @@
 package structures;
 
+import java.util.Iterator;
+
 import interfaces.IList;
 
 public class ArrayList<T> implements IList<T>
@@ -65,5 +67,11 @@ public class ArrayList<T> implements IList<T>
 	{
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
