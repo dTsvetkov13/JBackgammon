@@ -113,9 +113,9 @@ public class ArrayList<T> implements IList<T>
 	}
 
 	@Override
-	public Iterator<T> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterator<T> iterator() 
+	{
+		return new MyIterator();
 	}
 	
 	private int getIndexOfTheItem(T item)
@@ -127,5 +127,25 @@ public class ArrayList<T> implements IList<T>
 		}
 			
 		return -1;
+	}
+	
+	private class MyIterator<T> implements Iterator<T>
+	{
+		private int current;
+
+		@Override
+		public boolean hasNext() {
+			return current < size();
+		}
+
+		@Override
+		public T next() {
+			if (!hasNext()) 
+			{
+				throw new java.util.NoSuchElementException();
+			}
+            return (T) list[current++];
+		}
+		
 	}
 }
