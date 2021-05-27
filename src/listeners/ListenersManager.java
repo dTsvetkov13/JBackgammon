@@ -10,10 +10,10 @@ public class ListenersManager
 	
 	private ListenersManager()
 	{
-		listeners = new ArrayList<>();
+		listeners = new ArrayList(0);
 	}
 	
-	public static ListenersManager etInstance()
+	public static ListenersManager getInstance()
 	{
 		if(instance == null)
 		{
