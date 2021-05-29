@@ -10,20 +10,25 @@ import javax.swing.JPanel;
 
 import interfaces.IBoard;
 import listeners.IEventListener;
+import views.ColumnView;
 
 public class Board extends JPanel implements IBoard, IEventListener
 {
-	private static double offsetFromBorderPersentage = 4.583333333333333;
-	private static double columnWidthPersentage = 6.805555555555555;
-	private static double pullDiameterPersentage = 4.166666666666667;
+	public static double offsetFromBorderPersentage = 4.583333333333333;
+	public static double columnWidthPersentage = 6.805555555555555;
+	public static double pullDiameterPersentage = 4.166666666666667;
 	
+	public static int boardColumns = 12;
+	public static int boardRows = 12;
 	
 	private static String backgrandImagePath = "../resources/background.png";
 	private BufferedImage background;
+	private ColumnView columns[][];
 	
 	public Board()
 	{
 		super();
+		columns = new ColumnView[boardRows][boardColumns];
 		URL resource = getClass().getResource(backgrandImagePath);
 		
 		try
