@@ -1,31 +1,43 @@
 package views;
 
-import structures.Stack;
+import java.awt.Graphics;
 
-public class ColumnView
+import javax.swing.JPanel;
+
+import structures.ArrayList;
+
+public class ColumnView extends JPanel
 {
-	private Stack<PullView> pulls;
+	private ArrayList<PullView> pulls;
 	
 	public ColumnView()
 	{
-		pulls = new Stack<PullView>();
+		pulls = new ArrayList<PullView>(0);
 	}
 	
 	public void addPullView(PullView pullView)
 	{
 		if(pullView != null)
 		{
-			pulls.push(pullView);
+			pulls.add(pullView);
 		}
 	}
 	
 	public PullView getLastPullView()
 	{
-		return pulls.peek();
+		return pulls.get(pulls.size() - 1);
 	}
 	
 	public void removePullView()
 	{
-		pulls.pop();
+		pulls.removeFrom(pulls.size() - 1);
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		for(PullView pull : pulls)
+		{
+			pull.paintComponent(g);
+		}
 	}
 }
