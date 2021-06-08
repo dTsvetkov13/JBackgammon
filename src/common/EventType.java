@@ -8,5 +8,6 @@ public enum EventType
 	ThrowDice,
 	DiceThrown,
 	Redo,
-	Undo
+	Undo,
+	StartGame
 }
