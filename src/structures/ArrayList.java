@@ -147,5 +147,6 @@ public class ArrayList<T> implements IList<T>
             return (T) data[current++];
 		}
 		
-	}
+	}	
+	
 }
