@@ -9,10 +9,9 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import interfaces.IBoard;
-import listeners.IEventListener;
 import views.ColumnView;
 
-public class Board extends JPanel implements IBoard, IEventListener
+public class Board extends JPanel implements IBoard
 {
 	public static double offsetFromBorderPersentage = 4.583333333333333;
 	public static double columnWidthPersentage = 6.805555555555555;

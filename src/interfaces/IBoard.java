@@ -1,6 +1,8 @@
 package interfaces;
 
-public interface IBoard
-{
+import listeners.IEventListener;
 
+public interface IBoard extends IEventListener
+{
+	
 }
