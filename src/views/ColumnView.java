@@ -15,7 +15,7 @@ public class ColumnView extends JPanel
 	public ColumnView()
 	{
 		isSelected = false;
-		pulls = new ArrayList<PullView>(0);
+		pulls = new ArrayList<PullView>();
 	}
 	
 	public void addPullView(PullView pullView)
