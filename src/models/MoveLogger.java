@@ -4,6 +4,7 @@ import common.EventType;
 import interfaces.IMoveLogger;
 import interfaces.IStack;
 import listeners.ListenersManager;
+import structures.Pair;
 import structures.Stack;
 
 public class MoveLogger implements IMoveLogger 
@@ -40,9 +41,9 @@ public class MoveLogger implements IMoveLogger
 	}
 
 	@Override
-	public void logMove(Position from, Position to) 
+	public void logMove(Position from, Position to, Pair<Integer, Integer> currentDice) 
 	{
-		// TODO Auto-generated method stub
+		undo.push(new Log(from, to, currentDice));
 	}
 
 	@Override
