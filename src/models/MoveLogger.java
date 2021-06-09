@@ -1,16 +1,19 @@
 package models;
 
-import java.util.LinkedList;
-
-import interfaces.ICommand;
 import interfaces.IMoveLogger;
 import interfaces.IStack;
 import structures.Stack;
 
 public class MoveLogger implements IMoveLogger 
 {
-	private Stack<Log> undo;
-	private Stack<Log> redo;
+	private IStack<Log> undo;
+	private IStack<Log> redo;
+	
+	public MoveLogger()
+	{
+		undo = new Stack<Log>();
+		redo = new Stack<Log>();
+	}
 	
 	@Override
 	public void onEvent(Event event) 
@@ -29,8 +32,7 @@ public class MoveLogger implements IMoveLogger
 	@Override
 	public void undo() 
 	{
-		undo.pop();
-		//redo.push(data);
+		
 	}
 	
 	@Override
