@@ -16,8 +16,8 @@ import models.Event;
 
 public class Menu extends JPanel
 {
-	public static final int X_LENGHT = 40;
-	public static final int Y_LENGHT = 80;
+	public static final int X_LENGTH = 40;
+	public static final int Y_LENGTH = 80;
 	public static final int WIDTH = 800;
 	public static final int HEIGHT = 800;
 	public static final int BTN_WIDTH = 200;
@@ -32,7 +32,7 @@ public class Menu extends JPanel
 	{
 		Color brown = new Color(128, 96, 77);
 		Color btnColor = new Color(227,188,154);
-		this.setBounds(X_LENGHT, Y_LENGHT, WIDTH, HEIGHT);
+		this.setBounds(X_LENGTH, Y_LENGTH, WIDTH, HEIGHT);
 		this.setLayout(null);
 		this.setBackground(brown);
 		btnStart = new JButton("Start");
