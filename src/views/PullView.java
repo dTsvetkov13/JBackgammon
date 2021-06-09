@@ -49,19 +49,18 @@ public class PullView extends JPanel
 		}
 	}
 	
-	public void setTeam(Team team)
+	public void setPull(Team team)
 	{
-		
+		setPull(new Pull(team));
 	}
 	
 	public void paintComponent(Graphics g)
 	{
-		/*
 		super.paintComponent(g);
-        System.out.println(imagePath.getWidth() + " " + imagePath.getHeight() + " "
-        					+ imagePath.getMinX() + " " + imagePath.getMinY() + " " 
-        					+ imagePath.getMinTileX() + " " + imagePath.getMinTileY());
-        g.drawImage(imagePath, 0, 0, this);
-        */
+        System.out.println(image.getWidth() + " " + image.getHeight() + " "
+        					+ image.getMinX() + " " + image.getMinY() + " " 
+        					+ image.getMinTileX() + " " + image.getMinTileY());
+        g.drawImage(image, 0, 0, this);
+        
 	}
 }
