@@ -10,7 +10,7 @@ public class ListenersManager
 	
 	private ListenersManager()
 	{
-		listeners = new ArrayList(0);
+		listeners = new ArrayList<>();
 	}
 	
 	public static ListenersManager getInstance()
