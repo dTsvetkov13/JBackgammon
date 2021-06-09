@@ -7,12 +7,12 @@ import interfaces.IList;
 public class ArrayList<T> implements IList<T>
 {
 	private int index;
-	private Object[] list;
+	private Object[] data;
 	
-	public ArrayList(int size) 
+	public ArrayList() 
 	{
 		index = 0;
-		list = new Object[size];
+		data = new Object[index + 1];
 	}
 	
 	@Override
@@ -30,16 +30,16 @@ public class ArrayList<T> implements IList<T>
 	@Override
 	public void add(T item)
 	{
-		list[index++] = item;
+		data[index++] = item;
 		
-		if(index == list.length)
+		if(index == data.length)
 		{
-			Object[] temp = list;
-			list = new Object[temp.length * 2];
+			Object[] temp = data;
+			data = new Object[temp.length * 2];
 			
 			for(int i = 0; i < temp.length; i++)
 			{
-				list[i] = temp[i];
+				data[i] = temp[i];
 			}
 		}
 	}
@@ -47,22 +47,22 @@ public class ArrayList<T> implements IList<T>
 	@Override
 	public void insertAt(T item, int index)
 	{
-		if(this.index + 1 == list.length)
+		if(this.index + 1 == data.length)
 		{
-			Object[] temp = list;
-			list = new Object[temp.length * 2];
+			Object[] temp = data;
+			data = new Object[temp.length * 2];
 			
 			for(int i = 0; i < temp.length; i++)
 			{
-				list[i] = temp[i];
+				data[i] = temp[i];
 			}
 		}
 		
 		for(int i = this.index; i > index; i--)
 		{
-			list[i] = list[i - 1];
+			data[i] = data[i - 1];
 		}
-		list[index] = item;
+		data[index] = item;
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class ArrayList<T> implements IList<T>
 		
 		for(int i = index; i < this.index - 1; i++)
 		{
-			list[i] = list[i + 1];
+			data[i] = data[i + 1];
 		}
 	}
 
@@ -97,7 +97,7 @@ public class ArrayList<T> implements IList<T>
 		{
 			throw new IllegalArgumentException("Incorrect index");
 		}
-		return (T) list[index];
+		return (T) data[index];
 	}
 
 	@Override
@@ -122,7 +122,7 @@ public class ArrayList<T> implements IList<T>
 	{
 		for(int i = 0; i<this.index; i++)
 		{
-			if(list[i].equals(item))
+			if(data[i].equals(item))
 				return i;
 		}
 			
@@ -144,7 +144,7 @@ public class ArrayList<T> implements IList<T>
 			{
 				throw new java.util.NoSuchElementException();
 			}
-            return (T) list[current++];
+            return (T) data[current++];
 		}
 		
 	}
