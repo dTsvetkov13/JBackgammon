@@ -20,7 +20,23 @@ public class MoveLogger implements IMoveLogger
 	@Override
 	public void onEvent(Event event) 
 	{
-		// TODO Auto-generated method stub
+		switch(event.type)
+		{
+		case Undo:
+		{
+			undo();
+		}
+		case Redo:
+		{
+			redo();
+		}
+		case PullMoved:
+		{
+			//logMove();
+		}
+		default:
+			break;
+		}
 	}
 
 	@Override
