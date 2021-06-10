@@ -16,23 +16,12 @@ public class PullView extends JPanel
 {
 	private Pull pull;
 	private static String imagePath = " ";
-	private static String whitePull = "../resources/whitePull.png";
-	private static String blackPull = "../resources/blackPull.png";
+	private static String whitePull = "../resources/WhitePull.png";
+	private static String blackPull = "../resources/BlackPull.png";
 	private BufferedImage image;
 		
 	public PullView()
 	{
-		
-		
-		URL resource = getClass().getResource(imagePath);
-		try
-		{
-			image = ImageIO.read(PullView.class.getResourceAsStream(imagePath));
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
 	}
 	
 	public void setPull(Pull pull)
@@ -47,6 +36,16 @@ public class PullView extends JPanel
 		{
 			imagePath = whitePull;
 		}
+		
+		URL resource = getClass().getResource(imagePath);
+		try
+		{
+			image = ImageIO.read(PullView.class.getResourceAsStream(imagePath));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	public void setPull(Team team)
@@ -57,10 +56,8 @@ public class PullView extends JPanel
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-        System.out.println(image.getWidth() + " " + image.getHeight() + " "
-        					+ image.getMinX() + " " + image.getMinY() + " " 
-        					+ image.getMinTileX() + " " + image.getMinTileY());
         g.drawImage(image, 0, 0, this);
+        System.out.println("kurec");
         
 	}
 }
