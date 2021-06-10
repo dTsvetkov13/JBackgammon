@@ -2,7 +2,9 @@ package models;
 
 import java.util.Random;
 
+import common.EventType;
 import listeners.IEventListener;
+import listeners.ListenersManager;
 import structures.Pair;
 
 public class Dice implements IEventListener
@@ -12,7 +14,17 @@ public class Dice implements IEventListener
 	@Override
 	public void onEvent(Event event)
 	{
-		
+		switch(event.type)
+		{
+		case ThrowDice:
+		{
+			ListenersManager.getInstance()
+			.onEvent(new Event<Pair<Integer, Integer>>(EventType.DiceThrown, throwDice()));
+			break;
+		}
+		default:
+			break;
+		}
 	}
 	
 	private Pair<Integer, Integer> throwDice()
