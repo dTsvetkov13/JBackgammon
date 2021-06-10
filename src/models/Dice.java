@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Random;
+
 import listeners.IEventListener;
 import structures.Pair;
 
@@ -15,6 +17,10 @@ public class Dice implements IEventListener
 	
 	private Pair<Integer, Integer> throwDice()
 	{
-		return null;
+		Random rand = new Random();
+		int firstNumber = 1 + rand.nextInt(6);
+		int secondNumber = 1 + rand.nextInt(6);
+		
+		return new Pair<Integer, Integer> (firstNumber, secondNumber);
 	}
 }
