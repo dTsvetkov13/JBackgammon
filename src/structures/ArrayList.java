@@ -63,6 +63,7 @@ public class ArrayList<T> implements IList<T>
 			data[i] = data[i - 1];
 		}
 		data[index] = item;
+		this.index = this.index + 1;
 	}
 
 	@Override
@@ -77,6 +78,7 @@ public class ArrayList<T> implements IList<T>
 		{
 			data[i] = data[i + 1];
 		}
+		this.index = this.index - 1;
 	}
 
 	@Override
