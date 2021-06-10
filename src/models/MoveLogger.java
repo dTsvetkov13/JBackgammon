@@ -26,14 +26,17 @@ public class MoveLogger implements IMoveLogger
 		case Undo:
 		{
 			undo();
+			break;
 		}
 		case Redo:
 		{
 			redo();
+			break;
 		}
 		case PullMoved:
 		{
 			//logMove();
+			break;
 		}
 		default:
 			break;
