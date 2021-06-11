@@ -4,8 +4,11 @@ import common.Team;
 
 public class Player 
 {
+	public static final int STARTING_PULLS_COUNT = 15;
+	
 	private Team team;
-
+	private int pullsToWin;
+	
 	public Player()
 	{
 		this(Team.Black);
@@ -15,6 +18,7 @@ public class Player
 	{
 		super();
 		this.team = team;
+		pullsToWin = STARTING_PULLS_COUNT;
 	}
 
 	public Team getTeam() 
