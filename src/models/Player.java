@@ -15,5 +15,15 @@ public class Player
 	{
 		super();
 		this.team = team;
+	}
+
+	public Team getTeam() 
+	{
+		return team;
+	}
+
+	public void setTeam(Team team) 
+	{
+		this.team = team;
 	}	
 }
