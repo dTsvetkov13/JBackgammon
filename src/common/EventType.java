@@ -11,5 +11,6 @@ public enum EventType
 	RedoPopped,
 	Undo,
 	UndoPopped,
-	StartGame
+	StartGame,
+	OpenMenu
 }
