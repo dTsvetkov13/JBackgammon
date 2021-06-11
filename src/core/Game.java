@@ -41,6 +41,12 @@ public class Game implements IEventListener
 			this.layout.previous(this.window.getContentPane());
 			break;
 		}
+		case OpenMenu:
+		{
+			window.add(menu);
+			this.layout.previous(this.window.getContentPane());			
+			break;
+		}
 		default:
 			break;
 		}
