@@ -49,9 +49,9 @@ public class EndScreen extends JPanel
 		});
 		
 		btnExit = new JButton("Exit");
-		btnExit.setBounds(START_X, START_Y, BTN_WIDTH, BTN_HEIGHT);
+		btnExit.setBounds(START_X, START_Y + 60, BTN_WIDTH, BTN_HEIGHT);
 		btnExit.setBackground(btnColor);
-		btnBackToMenu.addActionListener(new ActionListener() 
+		btnExit.addActionListener(new ActionListener() 
 		{
 
 			@Override
