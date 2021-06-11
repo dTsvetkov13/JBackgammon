@@ -24,7 +24,7 @@ public class Player
 	public Team getTeam() 
 	{
 		return team;
-	}
+	}  
 
 	public void setTeam(Team team) 
 	{
