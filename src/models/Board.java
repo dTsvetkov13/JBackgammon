@@ -17,8 +17,8 @@ public class Board extends JPanel implements IBoard
 	public static double columnWidthPersentage = 6.805555555555555;
 	public static double pullDiameterPersentage = 4.166666666666667;
 	
-	public static int boardColumns = 12;
-	public static int boardRows = 12;
+	public static int boardColumns = 13; //Last one for bearing off
+	public static int boardRows = 2;
 	
 	private static String backgrandImagePath = "../resources/background.png";
 	private BufferedImage background;
