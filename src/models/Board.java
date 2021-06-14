@@ -1,14 +1,20 @@
 package models;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import common.EventType;
 import interfaces.IBoard;
+import listeners.ListenersManager;
 import views.ColumnView;
 
 public class Board extends JPanel implements IBoard
@@ -23,6 +29,7 @@ public class Board extends JPanel implements IBoard
 	private static String backgrandImagePath = "../resources/background.png";
 	private BufferedImage background;
 	private ColumnView columns[][];
+	private JButton btnBack;
 	
 	public Board()
 	{
@@ -56,6 +63,24 @@ public class Board extends JPanel implements IBoard
         					+ background.getMinX() + " " + background.getMinY() + " " 
         					+ background.getMinTileX() + " " + background.getMinTileY());
         g.drawImage(background, 0, 0, this);
+        
+        Color btnColor = new Color(227,188,154);
+		this.setLayout(null);
+		btnBack = new JButton("Back");
+		btnBack.setBounds(background.getWidth() + 50, 40, 200, 50);
+		btnBack.setBackground(btnColor);
+		
+		btnBack.addActionListener(new ActionListener() 
+		{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				ListenersManager.getInstance().onEvent(new Event<Object>(EventType.OpenMenu, null));
+			}
+			
+		});
+		this.add(btnBack);
     }
 	
 }
